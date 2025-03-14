@@ -8,12 +8,14 @@ const Login = ({ setIsAuthenticated }) => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    if (username === "admin" && password === "password") {
+    try {
+      const response = await axios.post("http://localhost:3001/api/auth/login", { username, password });
+      localStorage.setItem("token", response.data.token);
       setIsAuthenticated(true);
       navigate("/search");
-    } else {
+    } catch (err) {
       setError("Invalid credentials");
     }
   };
