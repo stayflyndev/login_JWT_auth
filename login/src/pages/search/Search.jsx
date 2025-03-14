@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
 import { loadStripe } from "@stripe/stripe-js";
 
-const stripePromise = loadStripe("pk_test_51R1iCdPtyCp8TGIg0xb2swhdxZ0IzLM0YECYnQocKh3bqy0MhF4wHf9oSxtpSnMj1HdfSkEWzKVISEqsKgtWXoaQ006tJTwaUp");
+const stripePromise = loadStripe("pk_test_");
 
 const Search = () => {
   const [results, setResults] = useState([]);
